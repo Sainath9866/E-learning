@@ -19,7 +19,7 @@ export function Sql2() {
   return (
 
     <div className="p-6 bg-gray-900 text-white min-h-screen">
-        <header className="bg-gray-900 text-white py-4 px-6 fixed top-0 w-full z-10">
+        <header className="px-[150px] bg-gray-900 text-white py-4  fixed top-0 w-full z-10">
                 <div className="flex justify-between items-center">
                     {/* Left side: Title */}
                     <h1 className="text-2xl font-bold">DailyCode</h1>
@@ -34,18 +34,7 @@ export function Sql2() {
                             Next
                         </button>
                     </div>
-                    <div className="flex items-center space-x-4">
-                        <label className="text-lg">
-                            <input 
-                                type="checkbox"
-                                id="myCheckbox"
-                                name="myCheckbox"
-                                checked={isChecked}
-                                onChange={handleCheckboxChange}
-                            />
-                            Mark as Done
-                        </label>
-                    </div>
+                    
                 </div>
             </header> <br /><br />
       <div className="mb-8">

@@ -1,25 +1,25 @@
+
 import React, { useState } from 'react';
 import checkboxState from '../checkbox-state';
 import { useNavigate } from 'react-router-dom';
-
-export const Dashboard = () => {
+function Tests(){
     const navigate = useNavigate();
 
-    const [menuOpen, setMenuOpen] = useState(false); // State for dropdown menu visibility
+    
 
     const courseList1 = [
-        { id: 1, title: "SQL", description: "In this track, we'll be learning about SQL databases, and how they're different from NoSQL databases", progress: 30 }
+        { id: 1, title: "SQL", description: "Welcome to the SQL Test!This test consists of 20 questions, each carrying one mark. It is designed to evaluate your understanding of SQL (Structured Query Language), the standard language for managing and manipulating databases. You will encounter a range of questions from basic concepts to more complex queries. Your total score will reflect your knowledge of SQL syntax, functions, and best practices. Good luck!", progress: 30 }
     ];
-    const courseList2 = [{ id: 1, title: "CPP", description: "In this track, we'll be learning C++ basics,It's object-oriented, meaning it uses data fields (objects) instead of logic or functions", progress: 30 }];
-    const courseList3 = [{ id: 1, title: "JAVA", description: "The main ideas behind Java's Object-Oriented Programming, OOP concepts include abstraction, encapsulation, inheritance and polymorphism.", progress: 30 }];
+    const courseList2 = [{ id: 1, title: "CPP", description: "Welcome to the C++ Test! This test comprises 20 questions, with each question worth one mark. It is crafted to challenge your proficiency in C++, a powerful programming language known for its performance and versatility. You'll face a variety of questions covering fundamental concepts, object-oriented programming, and advanced features of C++. This test is an excellent way to gauge your understanding of C++ and identify areas for improvement. Happy coding!", progress: 30 }];
+    const courseList3 = [{ id: 1, title: "JAVA", description: "Welcome to the Java Test! Prepare to dive into the world of Java with this test featuring 20 questions, each carrying one mark. This assessment will evaluate your grasp of core Java concepts, object-oriented programming principles, and Java-specific libraries and frameworks. Whether you're a beginner or looking to refresh your knowledge, this test will help you evaluate your skills. Best of luck!", progress: 30 }];
 
     const handleLearnNowClick = (courseTitle) => {
         if (courseTitle === "SQL") {
-            navigate("/sql-main");
+            navigate("/tests/sql-test");
         } else if (courseTitle === "CPP") {
-            navigate("/cpp-main");
+            navigate("/tests/cpp-test");
         } else {
-            navigate("/java-main");
+            navigate("/tests/java-test");
         }
     };
 
@@ -28,41 +28,13 @@ export const Dashboard = () => {
     const roundedValue = progress.toFixed(2);
 
     // Function to toggle dropdown menu visibility
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen);
-    };
-    const handletest = () => {
-        navigate("/tests/tests-main")
-    }
-    const handlecontact = () =>{
-        navigate("/contactus")
-    }
-   
+    
+    
 
     return (
         <section id="courses" className="py-8">
-            <button onClick={toggleMenu} className='btn-secondary bg-blue-500 ml-4 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300'>
-                Menu
-            </button>
-
-            {/* Dense Dropdown Menu */}
-            {menuOpen && (
-                <div className="dropdown-menu mt-6 bg-blue-500 shadow-lg rounded-lg py-4 mt-2 absolute left-4 top-12 w-52 z-50">
-                    <button className="block px-4 py-2 text-white text-lg hover:bg-blue-600 focus:outline-none">Courses</button>
-                    <button onClick={handletest} className="block px-4 py-2 text-white text-lg hover:bg-blue-600 focus:outline-none">Tests</button>
-                    <a href="http://localhost:5173/">
-                    <button className="block px-4 py-2 text-white text-lg hover:bg-blue-600 focus:outline-none">Practice</button>
-                    </a>
-                    <button onClick={handlecontact} className="block px-4 py-2 text-white text-lg hover:bg-blue-600 focus:outline-none">Contact Us</button>
-                </div>
-            )}
-
-
-            <h1 className="text-4xl font-bold text-center text-white bg-blue-500 py-1 px-3 rounded-lg shadow-md hover:bg-blue-600 transition duration-300 cursor-pointer">
-                Daily Code
-            </h1>
-
-
+            
+            <h1 className=" text-4xl font-bold text-center text-gray-800 mb-8">Test your Caliber</h1>
             <div className='flex justify-center'>
                 <div className="px-4">
                     {courseList1.map((course) => (
@@ -77,7 +49,7 @@ export const Dashboard = () => {
                                 className="btn-secondary bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300"
                                 onClick={() => handleLearnNowClick(course.title)}
                             >
-                                Learn Now
+                                start
                             </button>
                         </div>
                     ))}
@@ -96,7 +68,7 @@ export const Dashboard = () => {
                                 className="btn-secondary bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300"
                                 onClick={() => handleLearnNowClick(course.title)}
                             >
-                                Learn Now
+                                start
                             </button>
                         </div>
                     ))}
@@ -115,7 +87,7 @@ export const Dashboard = () => {
                                 className="btn-secondary bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300"
                                 onClick={() => handleLearnNowClick(course.title)}
                             >
-                                Learn Now
+                                start
                             </button>
                         </div>
                     ))}
@@ -124,4 +96,7 @@ export const Dashboard = () => {
             </div>
         </section>
     );
-};
+
+}
+
+export default Tests

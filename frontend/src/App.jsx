@@ -29,43 +29,66 @@ import { Java1 } from "./java/java-1";
 import { Java2 } from "./java/java-2";
 import { Java3 } from "./java/java-3";
 import { Java4 } from "./java/java-4";
-
+import { Sql } from "./sql/sql-main";
+import { Cpp } from "./cpp/cpp-main"
+import {Java} from "./java/java-main"
+import ProtectedRoute from "./LanCom/Protected-Route";
+import Tests from "./tests/tests-main"
+import Sql_test from "./tests/sql-test"
+import Cpp_test from "./tests/cpp-test"
+import Java_test from "./tests/java-test"
+import ContactPage from "./LanCom/contact";
 
 import Landing from "./Landing"
+
+
 
 function App() {
   return (
     <>
-       <BrowserRouter>
+      <BrowserRouter>
         <Routes>
-        <Route path="/" element={<Landing />} />
+          <Route path="/" element={<Landing />} />
           <Route path="/signup" element={<Signup />} />
-           <Route path="/signin" element={<Signin />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/sql-1" element={<Sql1 />} /> 
-          <Route path="/sql-2" element={<Sql2 />} /> 
-          <Route path="/sql-3" element={<Sql3 />} />   
-          <Route path="/sql-4" element={<Sql4 />} />   
-          <Route path="/sql-5" element={<Sql5 />} />
-          <Route path="/sql-6" element={<Sql6 />} />
-          <Route path="/sql-7" element={<Sql7 />} />
-          <Route path="/sql-8" element={<Sql8 />} />
-          <Route path="/sql-9" element={<Sql9 />} />
-          <Route path="/sql-10" element={<Sql10 />} />
-          <Route path="/sql-11" element={<Sql11 />} />
-          <Route path="/cpp-1" element={<Cpp1 />} />
-          <Route path="/cpp-2" element={<Cpp2 />} />
-          <Route path="/cpp-3" element={<Cpp3 />} />
-          <Route path="/cpp-4" element={<Cpp4 />} />
-          <Route path="/cpp-5" element={<Cpp5 />} />
-          <Route path="/cpp-6" element={<Cpp6 />} />
-          <Route path="/cpp-7" element={<Cpp7 />} />
-          <Route path="/java-1" element={<Java1 />} />
-          <Route path="/java-2" element={<Java2 />} />
-          <Route path="/java-3" element={<Java3 />} />
-          <Route path="/java-4" element={<Java4 />} />
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/dashboard" element={<ProtectedRoute> <Dashboard /></ProtectedRoute>} />
+          <Route path="/sql-1" element={<ProtectedRoute><Sql1 /></ProtectedRoute>} />
+          <Route path="/sql-2" element={<ProtectedRoute><Sql2 /></ProtectedRoute>} />
+          <Route path="/sql-3" element={<ProtectedRoute><Sql3 /></ProtectedRoute>} />
+          <Route path="/sql-4" element={<ProtectedRoute><Sql4 /></ProtectedRoute>} />
+          <Route path="/sql-5" element={<ProtectedRoute><Sql5 /></ProtectedRoute>} />
+          <Route path="/sql-6" element={<ProtectedRoute><Sql6 /></ProtectedRoute>} />
+          <Route path="/sql-7" element={<ProtectedRoute><Sql7 /></ProtectedRoute>} />
+          <Route path="/sql-8" element={<ProtectedRoute><Sql8 /></ProtectedRoute>} />
+          <Route path="/sql-9" element={<ProtectedRoute><Sql9 /></ProtectedRoute>} />
+          <Route path="/sql-10" element={<ProtectedRoute><Sql10 /></ProtectedRoute>} />
+          <Route path="/sql-11" element={<ProtectedRoute><Sql11 /></ProtectedRoute>} />
 
+          <Route path="/cpp-1" element={<ProtectedRoute><Cpp1 /></ProtectedRoute>} />
+          <Route path="/cpp-2" element={<ProtectedRoute><Cpp2 /></ProtectedRoute>} />
+          <Route path="/cpp-3" element={<ProtectedRoute><Cpp3 /></ProtectedRoute>} />
+          <Route path="/cpp-4" element={<ProtectedRoute><Cpp4 /></ProtectedRoute>} />
+          <Route path="/cpp-5" element={<ProtectedRoute><Cpp5 /></ProtectedRoute>} />
+          <Route path="/cpp-6" element={<ProtectedRoute><Cpp6 /></ProtectedRoute>} />
+          <Route path="/cpp-7" element={<ProtectedRoute><Cpp7 /></ProtectedRoute>} />
+
+          <Route path="/java-1" element={<ProtectedRoute><Java1 /></ProtectedRoute>} />
+          <Route path="/java-2" element={<ProtectedRoute><Java2 /></ProtectedRoute>} />
+          <Route path="/java-3" element={<ProtectedRoute><Java3 /></ProtectedRoute>} />
+          <Route path="/java-4" element={<ProtectedRoute><Java4 /></ProtectedRoute>} />
+          <Route path="/java-main" element={<ProtectedRoute><Java /></ProtectedRoute>} />
+
+
+          <Route path="/sql-main" element={<ProtectedRoute><Sql /></ProtectedRoute>} />
+          <Route path="/cpp-main" element={<ProtectedRoute><Cpp /></ProtectedRoute>} />
+          <Route path="/tests/tests-main" element={<ProtectedRoute><Tests /></ProtectedRoute>} />
+          <Route path="/tests/sql-test" element={<ProtectedRoute><Sql_test/></ProtectedRoute>} />
+          <Route path="/tests/cpp-test" element={<ProtectedRoute><Cpp_test /></ProtectedRoute>} />
+          <Route path="/tests/java-test" element={<ProtectedRoute><Java_test/></ProtectedRoute>} />
+          
+          <Route path="/contactus" element={<ProtectedRoute><ContactPage/></ProtectedRoute>} />
         </Routes>
+
       </BrowserRouter>
     </>
   )

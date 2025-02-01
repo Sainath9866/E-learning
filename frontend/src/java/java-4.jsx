@@ -37,18 +37,7 @@ export function Java4() {
                     </div>
 
                     {/* Checkbox */}
-                    <div className="flex items-center space-x-4">
-                        <label className="text-lg">
-                            <input 
-                                type="checkbox"
-                                id="myCheckbox"
-                                name="myCheckbox"
-                                checked={isChecked}
-                                onChange={handleCheckboxChange}
-                            />
-                            Mark as Done
-                        </label>
-                    </div>
+                    
                 </div>
             </header>
 
