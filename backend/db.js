@@ -1,15 +1,8 @@
 // backend/db.js
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb+srv://cvsainath9866:Drewff1234@cluster0.l9hqohb.mongodb.net/paytm-app")
-//mongodb+srv://cvsainath9866:Drewff1234@cluster0.l9hqohb.mongodb.net/
+mongoose.connect("")
 
-//const mongoose = require('mongoose');
-
-// mongoose.connect('mongodb+srv://cvsainath9866:Drewff1234@cluster0.l9hqohb.mongodb.net/paytm-app', { 
-//     serverSelectionTimeoutMS: 30000 // Increase timeout if necessary
-//   });
-// Create a Schema for Users
 
 const userSchema = new mongoose.Schema({
     username: {
